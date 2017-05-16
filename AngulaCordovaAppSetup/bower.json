@@ -1,5 +1,4 @@
 {
-    "name": "AngulaCordovaAppSetup",
-    "dependencies": {
-    }
+  "name": "AngulaCordovaAppSetup",
+  "dependencies": {}
 }

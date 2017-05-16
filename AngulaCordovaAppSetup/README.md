@@ -18,3 +18,6 @@ new project setup with AngularJS and webpack.
 
          - origin  https://github.com/USERNAME/OTHERREPOSITORY.git (fetch)
          - origin  https://github.com/USERNAME/OTHERREPOSITORY.git (push)
+
+
+         1> run command in commandline: npm i
