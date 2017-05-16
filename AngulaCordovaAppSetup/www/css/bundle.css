@@ -1,17 +1,1 @@
-body {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.newHeader div {
-  height: 50px;
-  width: 60px;
-  background-color: red;
-  border-radius: 5px;
-  margin-left: 46%;
-  margin-top: 20%;
-}
-
-
-/*# sourceMappingURL=bundle.css.map*/
+body{height:100%;width:100%;font-family:Arial,Helvetica,sans-serif}.redBox div{height:50px;width:60px;background-color:red;border-radius:5px;margin-left:calc(50% - 30px);margin-top:calc(50% - 20px)}
