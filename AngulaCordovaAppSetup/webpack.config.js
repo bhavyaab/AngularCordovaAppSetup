@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='Run - Development' />
+/// <binding BeforeBuild='Run - Production' />
 'use strict';
 
 const dotenv = require('dotenv');
