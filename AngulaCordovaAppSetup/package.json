@@ -31,7 +31,10 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
   "-vs-binding": {
     "BeforeBuild": [
       "build"
