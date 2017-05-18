@@ -1,5 +1,4 @@
 ﻿'use strict';
-
 require('./scss/main.scss');
 
 const path = require('path');
@@ -11,17 +10,16 @@ const ngFileUpload = require('ng-file-upload');
 
 const app = angular.module('AngulaCordovaAppSetup', [uiRouter, ngFileUpload]);
 
-let context;
-// let context = require.context('./config/', true, /\.js$/);
-// context.keys().forEach(path => {
-//     app.config(context(path));
-// });
+ let context = require.context('./config/', true, /\.js$/);
+ context.keys().forEach(path => {
+     app.config(context(path));
+ });
 
-// context = require.context('./view/', true, /\.js$/);
-// context.keys().forEach(key => {
-    // let name = pascalcase(path.basename(key, '.js'));
-    //app.controller(name, context(key));
-//});
+ context = require.context('./view/', true, /\.js$/);
+ context.keys().forEach(key => {
+     let name = pascalcase(path.basename(key, '.js'));
+    app.controller(name, context(key));
+});
 
 //context = require.context('./service/', true, /\.js$/);
 //context.keys().forEach(key => {
@@ -33,7 +31,6 @@ context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => {
     let name = camelcase(path.basename(key, '.js'));
     let module = context(key);
-    console.log('name = ' + name, ' module=  ' + module);
     app.component(name, module);
 });
 

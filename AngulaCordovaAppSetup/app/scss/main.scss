@@ -5,4 +5,10 @@
 @import './lib/base/base.scss';
 
 
-@import'../component/new-header/new-header.scss';
+// :: COMPONENT :://
+@import'../component/red-box/red-box.scss';
+
+
+// :: VIEW :://
+@import '../view/home/_home.scss';
+@import '../view/landing/_landing.scss';
