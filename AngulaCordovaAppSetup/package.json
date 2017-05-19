@@ -37,8 +37,8 @@
     "webpack": "^1.14.0",
     "webpack-cordova-plugin": "^0.1.6"
   },
-  "devDependencies": {}
-
-
-, "-vs-binding":{"BeforeBuild":["build"]}
+  "devDependencies": {
+    "webpack-dev-server": "^2.4.5"
+  },
+  "-vs-binding":{"BeforeBuild":["build"]}
 }

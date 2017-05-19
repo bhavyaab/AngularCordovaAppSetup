@@ -1,12 +1,13 @@
 ﻿@import "../scss/lib/theme/vars";
 
 .home {
-    background-color: orange;
+    background-color: mediumpurple;
     width: 80%;
-    height: 80%;
+    height: 100vh;
     margin-left: 10%;
-
+    margin-top: 15px;
     div {
+        margin-top: 20vh;
         text-align: center;
     }
 }

@@ -19,7 +19,7 @@ let plugins = [
     }),
     new CordovaPlugin({
         output: 'www',
-        config: `${__dirname}/config.xml`,  // Location of Cordova' config.xml (will be created if not found)
+        config: 'config.xml',  // Location of Cordova' config.xml (will be created if not found)
         index: `${__dirname}/app/index.html`,     // Set entry-point of cordova in config.xml
         platform: 'ios' || 'android',  // Set `webpack-dev-server` to correct `contentBase` to use Cordova plugins.
         version: true,         // Set config.xml' version. (true = use version from package.json)
