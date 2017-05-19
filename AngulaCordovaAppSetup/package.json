@@ -2,6 +2,10 @@
   "name": "AngulaCordovaAppSetup",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "build-watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+  },
   "dependencies": {
     "angular": "^1.6.1",
     "angular-animate": "^1.6.1",
@@ -30,12 +34,11 @@
     "style-loader": "^0.13.1",
     "ui-router": "^1.0.0-alpha.3",
     "url-loader": "^0.5.7",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-cordova-plugin": "^0.1.6"
   },
-  "devDependencies": {},
-  "-vs-binding": {
-    "BeforeBuild": [
-      "build"
-    ]
-  }
+  "devDependencies": {}
+
+
+, "-vs-binding":{"BeforeBuild":["build"]}
 }

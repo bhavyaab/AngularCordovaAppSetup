@@ -42,35 +42,31 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!**********************!*\
-  !*** ./app/entry.js ***!
-  \**********************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	__webpack_require__(/*! ./scss/main.scss */ 1);
+	__webpack_require__(1);
 	
-	const path = __webpack_require__(/*! path */ 5);
-	const angular = __webpack_require__(/*! angular */ 7);
-	const camelcase = __webpack_require__(/*! camelcase */ 9);
-	const pascalcase = __webpack_require__(/*! pascalcase */ 10);
-	const uiRouter = __webpack_require__(/*! angular-ui-router */ 11);
-	const ngFileUpload = __webpack_require__(/*! ng-file-upload */ 12);
+	const path = __webpack_require__(5);
+	const angular = __webpack_require__(7);
+	const camelcase = __webpack_require__(9);
+	const pascalcase = __webpack_require__(10);
+	const uiRouter = __webpack_require__(11);
+	const ngFileUpload = __webpack_require__(12);
 	
 	const app = angular.module('AngulaCordovaAppSetup', [uiRouter, ngFileUpload]);
 	
-	let context;
-	// let context = require.context('./config/', true, /\.js$/);
-	// context.keys().forEach(path => {
-	//     app.config(context(path));
-	// });
+	let context = __webpack_require__(14);
+	context.keys().forEach(path => {
+	    app.config(context(path));
+	});
 	
-	// context = require.context('./view/', true, /\.js$/);
-	// context.keys().forEach(key => {
-	// let name = pascalcase(path.basename(key, '.js'));
-	//app.controller(name, context(key));
-	//});
+	context = __webpack_require__(19);
+	context.keys().forEach(key => {
+	    let name = pascalcase(path.basename(key, '.js'));
+	    app.controller(name, context(key));
+	});
 	
 	//context = require.context('./service/', true, /\.js$/);
 	//context.keys().forEach(key => {
@@ -78,11 +74,10 @@
 	//app.service(name, context(key));
 	//});
 	
-	context = __webpack_require__(/*! ./component/ */ 14);
+	context = __webpack_require__(22);
 	context.keys().forEach(key => {
 	    let name = camelcase(path.basename(key, '.js'));
 	    let module = context(key);
-	    console.log('name = ' + name, ' module=  ' + module);
 	    app.component(name, module);
 	});
 	
@@ -100,9 +95,6 @@
 
 /***/ }),
 /* 1 */
-/*!****************************!*\
-  !*** ./app/scss/main.scss ***!
-  \****************************/
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
@@ -112,9 +104,6 @@
 /* 3 */,
 /* 4 */,
 /* 5 */
-/*!************************************!*\
-  !*** ./~/path-browserify/index.js ***!
-  \************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -342,13 +331,10 @@
 	    }
 	;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../process/browser.js */ 6)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 6 */
-/*!******************************!*\
-  !*** ./~/process/browser.js ***!
-  \******************************/
 /***/ (function(module, exports) {
 
 	// shim for using process in browser
@@ -539,20 +525,14 @@
 
 /***/ }),
 /* 7 */
-/*!****************************!*\
-  !*** ./~/angular/index.js ***!
-  \****************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! ./angular */ 8);
+	__webpack_require__(8);
 	module.exports = angular;
 
 
 /***/ }),
 /* 8 */
-/*!******************************!*\
-  !*** ./~/angular/angular.js ***!
-  \******************************/
 /***/ (function(module, exports) {
 
 	/**
@@ -33930,9 +33910,6 @@
 
 /***/ }),
 /* 9 */
-/*!******************************!*\
-  !*** ./~/camelcase/index.js ***!
-  \******************************/
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -33995,9 +33972,6 @@
 
 /***/ }),
 /* 10 */
-/*!*******************************!*\
-  !*** ./~/pascalcase/index.js ***!
-  \*******************************/
 /***/ (function(module, exports) {
 
 	/*!
@@ -34025,9 +33999,6 @@
 
 /***/ }),
 /* 11 */
-/*!**********************************************************!*\
-  !*** ./~/angular-ui-router/release/angular-ui-router.js ***!
-  \**********************************************************/
 /***/ (function(module, exports) {
 
 	/**
@@ -38717,19 +38688,13 @@
 
 /***/ }),
 /* 12 */
-/*!***********************************!*\
-  !*** ./~/ng-file-upload/index.js ***!
-  \***********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! ./dist/ng-file-upload-all */ 13);
+	__webpack_require__(13);
 	module.exports = 'ngFileUpload';
 
 /***/ }),
 /* 13 */
-/*!*****************************************************!*\
-  !*** ./~/ng-file-upload/dist/ng-file-upload-all.js ***!
-  \*****************************************************/
 /***/ (function(module, exports) {
 
 	/**!
@@ -41634,13 +41599,11 @@
 
 /***/ }),
 /* 14 */
-/*!*****************************!*\
-  !*** ./app/component \.js$ ***!
-  \*****************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./new-header/new-header.js": 15
+		"./log-config.js": 15,
+		"./router-config.js": 16
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -41658,33 +41621,153 @@
 
 /***/ }),
 /* 15 */
-/*!************************************************!*\
-  !*** ./app/component/new-header/new-header.js ***!
-  \************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	//require('./_new-header.scss');
 	
-	module.exports = {
-	    template: __webpack_require__(/*! ./new-header.html */ 16),
-	    controller: ['$log', '$location', NewHeaderController],
-	    controllerAs: 'newHeaderCtrl'
-	};
+	module.exports = ['$logProvider', logConfig];
 	
-	function NewHeaderController($log, $location) {
-	    $log.debug('newHeaderController');
+	function logConfig($logProvider) {
+	  $logProvider.debugEnabled((false));
 	}
 
 /***/ }),
 /* 16 */
-/*!**************************************************!*\
-  !*** ./app/component/new-header/new-header.html ***!
-  \**************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = ['$stateProvider', '$urlRouterProvider', routerConfig];
+	
+	function routerConfig($stateProvider, $urlRouterProvider) {
+	    $urlRouterProvider.when('', '/home');
+	    $urlRouterProvider.when('/', '/landing');
+	
+	    let states = [{
+	        name: 'home',
+	        url: '/home',
+	        template: __webpack_require__(17),
+	        controller: 'HomeController',
+	        controllerAs: 'homeCtrl'
+	    }, {
+	        name: 'landing',
+	        url: '/landing',
+	        template: __webpack_require__(18),
+	        controller: 'LandingController',
+	        controllerAs: 'landingCtrl'
+	    }];
+	
+	    states.forEach(state => {
+	        $stateProvider.state(state);
+	    });
+	}
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports) {
 
-	module.exports = "<section class=\"newHeader\">\r\n    <div></div>\r\n</section>";
+	module.exports = "<section class=home> <div> <a href=index.html#!/landing>Landing</a> </div> <red-box></red-box> </section>";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+	module.exports = "<section class=landing> <div> <a href=index.html#!/home>Home</a> </div> <red-box></red-box> </section>";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var map = {
+		"./home/home-controller.js": 20,
+		"./landing/landing-controller.js": 21
+	};
+	function webpackContext(req) {
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
+	module.exports = webpackContext;
+	webpackContext.id = 19;
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	module.exports = ['$log', '$location', '$rootScope', homeController];
+	
+	function homeController($log, $location) {
+	    $log.debug('homeController');
+	
+	    let url = $location.url();
+	    this.showHome = url === '' || '/home';
+	}
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	module.exports = ['$log', '$location', '$rootScope', landingController];
+	
+	function landingController($log, $location) {
+	    $log.debug('landingController');
+	
+	    let url = $location.url();
+	    this.showHome = url === '/landing' || '/';
+	}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var map = {
+		"./red-box/red-box.js": 23
+	};
+	function webpackContext(req) {
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
+	module.exports = webpackContext;
+	webpackContext.id = 22;
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = {
+	  template: __webpack_require__(24),
+	  controller: ['$log', '$location', RedBoxController],
+	  controllerAs: 'redBoxCtrl'
+	};
+	
+	function RedBoxController($log, $location) {
+	  $log.debug('RedBoxController');
+	}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+	module.exports = "<section class=redBox> <div></div> </section> ";
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=bundle.js.map

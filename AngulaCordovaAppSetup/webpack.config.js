@@ -6,7 +6,7 @@ const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const CordovaPlugin = require('webpack-cordova-plugin');
 dotenv.load();
 const production = process.env.NODE_ENV === 'production';
 
@@ -16,6 +16,13 @@ let plugins = [
     new webpack.DefinePlugin({
         __API_URL__: JSON.stringify(process.env.API_URL),
         __DEBUG__: JSON.stringify(!production)
+    }),
+    new CordovaPlugin({
+        output: 'www',
+        config: `${__dirname}/config.xml`,  // Location of Cordova' config.xml (will be created if not found)
+        index: `${__dirname}/app/index.html`,     // Set entry-point of cordova in config.xml
+        platform: 'ios' || 'android',  // Set `webpack-dev-server` to correct `contentBase` to use Cordova plugins.
+        version: true,         // Set config.xml' version. (true = use version from package.json)
     })
 ];
 
@@ -64,3 +71,4 @@ module.exports = {
         ]
     }
 };
+
